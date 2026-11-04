@@ -23,6 +23,9 @@ Die Projektregeln für alle Agenten stehen in [AGENTS.md](AGENTS.md).
   [.github/instructions/python.instructions.md](.github/instructions/python.instructions.md).
   `.claude/rules/python.md` ist ein Symlink darauf – Copilot und Claude Code nutzen
   dieselbe Datei.
+- Regeln für einzelne Ordner stehen in einer `context.md` im Ordner, bisher nur
+  [docs/reference/context.md](docs/reference/context.md). Sie wird nicht automatisch
+  geladen – `AGENTS.md` verweist darauf.
 
 ## Projektstruktur
 

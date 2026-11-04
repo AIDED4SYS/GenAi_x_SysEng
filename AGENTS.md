@@ -12,6 +12,19 @@
 
 <!-- TODO: z. B. "Tutor, der Konzepte erklärt, statt fertige Lösungen zu liefern" -->
 
+## Karte: was der Ordnerbaum nicht zeigt
+
+| Frage | Ort |
+|---|---|
+| Was ist gefordert? | `docs/requirements/` |
+| Wie ist es aufgebaut, und warum so? | `docs/architecture/` |
+| Was sagen Vorlesung, Normen, Literatur, Recherchen? | `docs/reference/` |
+| Was ist geplant, offen oder schon erledigt? | GitHub Issues und PRs dieses Repos, auch geschlossene |
+| Nicht gefunden? | Anforderungen, Entscheidungen und Quelleninhalte nicht erfinden – den Menschen fragen |
+
+Liegt in einem Ordner eine `context.md`, gilt sie für diesen Ordner: lesen, bevor du
+Inhalte daraus nutzt oder dort Dateien anlegst, änderst oder löschst.
+
 ## Konventionen
 
 - Sprache: Antworten, Kommentare und Docstrings auf Deutsch.
@@ -21,6 +34,7 @@
 
 - Python nur über uv: Befehle mit `uv run …`, Pakete mit `uv add` – nie `pip install`.
 - Nach Code-Änderungen `uv run pytest` und `uv run ruff check .` ausführen.
+
 - <!-- TODO: z. B. keine Dateien ohne Rückfrage löschen -->
 
 ## Git

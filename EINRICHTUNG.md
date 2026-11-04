@@ -13,6 +13,8 @@ das Folgende.
 - [Git](https://git-scm.com/)
 - [uv](https://docs.astral.sh/uv/getting-started/installation/) – verwaltet Python und
   alle Pakete; Python muss **nicht** separat installiert werden
+- [GitHub CLI](https://cli.github.com/) (`gh`) – damit Agenten Issues und PRs lesen
+  können. Nach der Installation einmalig `gh auth login`.
 
 ## 2. Windows: Entwicklermodus einschalten
 
@@ -53,9 +55,10 @@ Installiert Python 3.12 (falls nötig) und alle Abhängigkeiten in `.venv/`.
 ```bash
 uv run pytest
 git config core.symlinks
+gh auth status
 ```
 
-Erwartet: Tests bestanden, `core.symlinks` ist `true`.
+Erwartet: Tests bestanden, `core.symlinks` ist `true`, `gh` ist angemeldet.
 Zusätzlich müssen beide Symlinks korrekt angelegt sein (Windows/PowerShell):
 
 ```powershell

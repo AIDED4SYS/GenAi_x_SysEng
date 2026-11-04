@@ -29,3 +29,6 @@ Desktop.ini
 
 # Claude Code – persönliche Einstellungen
 .claude/settings.local.json
+
+# Quellen-PDFs – lizenziert, bleiben lokal
+docs/reference/**/*.pdf
