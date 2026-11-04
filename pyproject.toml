@@ -1,5 +1,5 @@
 [project]
-name = "ki-tutorium"
+name = "genai-x-syseng"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
@@ -10,7 +10,7 @@ requires-python = ">=3.12"
 dependencies = []
 
 [project.scripts]
-ki-tutorium = "ki_tutorium:main"
+genai-x-syseng = "genai_x_syseng:main"
 
 [build-system]
 requires = ["uv_build>=0.11.17,<0.12.0"]

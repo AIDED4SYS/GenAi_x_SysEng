@@ -1,4 +1,4 @@
-# KI-Tutorium
+# GenAi x SysEng
 
 <!-- TODO: Kurze Beschreibung – worum geht es in diesem Projekt? -->
 
@@ -26,11 +26,11 @@ Die Projektregeln für alle Agenten stehen in [AGENTS.md](AGENTS.md).
 
 ## Projektstruktur
 
-| Ordner              | Inhalt                          |
-|---------------------|---------------------------------|
-| `src/ki_tutorium/`  | Quellcode                       |
-| `tests/`            | Tests (pytest)                  |
-| `docs/`             | Dokumentation                   |
+| Ordner                | Inhalt                          |
+|-----------------------|---------------------------------|
+| `src/genai_x_syseng/` | Quellcode                       |
+| `tests/`              | Tests (pytest)                  |
+| `docs/`               | Dokumentation                   |
 
 ## Konfiguration
 
