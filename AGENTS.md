@@ -14,7 +14,7 @@
 
 ## Konventionen
 
-- Antworten, Kommentare und Docstrings auf Deutsch.
+- Sprache: Antworten, Kommentare und Docstrings auf Deutsch.
 - **Dateibenennung:** <!-- TODO: z. B. 01_thema_name.md -->
 
 ## Regeln

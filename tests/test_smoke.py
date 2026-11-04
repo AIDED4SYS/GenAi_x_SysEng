@@ -1,7 +1,7 @@
 """Einfacher Test, der prüft, ob das Paket importiert werden kann."""
 
-import ki_tutorium
+import genai_x_syseng
 
 
 def test_paket_importierbar():
-    assert ki_tutorium is not None
+    assert genai_x_syseng is not None
