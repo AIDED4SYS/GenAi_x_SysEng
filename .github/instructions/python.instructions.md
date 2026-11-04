@@ -8,7 +8,7 @@ paths:
 
 # Python-Regeln
 
-Allgemeine Projektregeln (uv, Befehle, Struktur) stehen in `AGENTS.md`.
+Allgemeine Projektregeln stehen in `AGENTS.md`.
 Hier nur, was speziell beim Schreiben von Python-Code gilt.
 
 ## Code-Stil
