@@ -45,6 +45,36 @@ Die Projektregeln für alle Agenten stehen in [AGENTS.md](AGENTS.md).
 | `.gitignore`       | Was Git ignoriert (`.venv`, Caches, `.env` …)                      |
 | `.gitattributes`   | Zeilenenden: LF, Windows-Skripte CRLF                              |
 
+## Git-Workflow
+
+`main` wird nie direkt geändert – jede Änderung läuft über einen Branch und einen
+Pull Request.
+
+1. **Arbeiten:** Alle Änderungen einer Session sammeln – nicht für jede Kleinigkeit
+   einen eigenen Branch oder PR. Agenten committen erst, wenn man es ihnen sagt
+   (siehe `AGENTS.md`).
+2. **Branch anlegen:** spätestens vor dem ersten Commit mit
+   `git switch -c <kurzer-name>` (z. B. `docs-unterordner`). Noch nicht committete
+   Änderungen nimmt der neue Branch mit.
+3. **Abschließen:** committen, pushen, PR öffnen und auf GitHub mergen.
+4. **Aufräumen:** GitHub löscht den Branch nach dem Merge automatisch
+   („Automatically delete head branches“). Lokal bleibt er bestehen:
+
+   ```bash
+   git switch main
+   git pull
+   git branch -d <kurzer-name>
+   ```
+
+   `-d` löscht nur Branches, die bereits gemergt sind – es geht also nichts verloren.
+
+Damit `git pull` auch die Verweise auf gelöschte GitHub-Branches (`origin/…`)
+entfernt, einmalig einstellen:
+
+```bash
+git config --global fetch.prune true
+```
+
 ## CI
 
 Bei Code-Änderungen prüft GitHub automatisch Linting und Tests.
