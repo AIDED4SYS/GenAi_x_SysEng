@@ -50,10 +50,12 @@ Die Projektregeln für alle Agenten stehen in [AGENTS.md](AGENTS.md).
 `main` wird nie direkt geändert – jede Änderung läuft über einen Branch und einen
 Pull Request.
 
-1. **Branch anlegen:** `git switch -c <kurzer-name>` (z. B. `docs-unterordner`)
-2. **Arbeiten:** Alle Änderungen einer Session auf diesem einen Branch sammeln –
-   nicht für jede Kleinigkeit einen eigenen Branch oder PR. Agenten committen erst,
-   wenn man es ihnen sagt (siehe `AGENTS.md`).
+1. **Arbeiten:** Alle Änderungen einer Session sammeln – nicht für jede Kleinigkeit
+   einen eigenen Branch oder PR. Agenten committen erst, wenn man es ihnen sagt
+   (siehe `AGENTS.md`).
+2. **Branch anlegen:** spätestens vor dem ersten Commit mit
+   `git switch -c <kurzer-name>` (z. B. `docs-unterordner`). Noch nicht committete
+   Änderungen nimmt der neue Branch mit.
 3. **Abschließen:** committen, pushen, PR öffnen und auf GitHub mergen.
 4. **Aufräumen:** GitHub löscht den Branch nach dem Merge automatisch
    („Automatically delete head branches“). Lokal bleibt er bestehen:
