@@ -8,10 +8,10 @@
 
 ## Art der Änderung
 
-- [ ] Neue Funktion / neuer Inhalt
-- [ ] Fehlerbehebung
-- [ ] Dokumentation
-- [ ] Aufräumen / Umstrukturierung
+<!-- Zutreffendes stehen lassen, Rest löschen (keine Checkboxen –
+     GitHub würde nicht zutreffende Optionen als offene Tasks zählen):
+     Neue Funktion / Fehlerbehebung / Dokumentation / Aufräumen -->
+
 
 ## Änderungen im Detail
 
