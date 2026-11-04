@@ -1,0 +1,10 @@
+{
+  "recommendations": [
+    "ms-python.python",
+    "ms-python.vscode-pylance",
+    "ms-python.debugpy",
+    "charliermarsh.ruff",
+    "tomoki1207.pdf",
+    "shd101wyy.markdown-preview-enhanced"
+  ]
+}

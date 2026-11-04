@@ -1,0 +1,38 @@
+# Führt Linting und Tests aus – nur wenn sich Code oder Abhängigkeiten ändern.
+name: CI
+
+on:
+  push:
+    branches: [main]
+    paths: &code_dateien
+      - "**.py"
+      - "pyproject.toml"
+      - "uv.lock"
+      - ".python-version"
+      - ".github/workflows/ci.yml"
+  pull_request:
+    paths: *code_dateien
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Code auschecken
+        uses: actions/checkout@v5
+
+      - name: uv installieren
+        uses: astral-sh/setup-uv@v6
+        with:
+          enable-cache: true
+
+      - name: Abhängigkeiten installieren
+        run: uv sync --locked
+
+      - name: Ruff – Linting
+        run: uv run ruff check .
+
+      - name: Ruff – Formatierung prüfen
+        run: uv run ruff format --check .
+
+      - name: Tests
+        run: uv run pytest
