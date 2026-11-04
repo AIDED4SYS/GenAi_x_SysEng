@@ -25,9 +25,10 @@
 
 ## Git
 
-- **Branches:** <!-- TODO -->
-- **Commit-Nachrichten:** <!-- TODO: z. B. Deutsch, kurz, im Imperativ -->
-- **Commits nur nach Rückfrage:** <!-- TODO: ja / nein -->
+- Nie direkt auf `main` committen oder pushen – immer Branch + Pull Request.
+- Committen, pushen und PRs öffnen nur auf Aufforderung – nicht nach jeder Änderung
+  danach fragen.
+- Alle Änderungen einer Session gehören auf denselben Branch und in einen PR.
 
 ## Einrichtung (`EINRICHTUNG.md`)
 
