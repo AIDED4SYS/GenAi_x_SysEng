@@ -34,7 +34,6 @@ Inhalte daraus nutzt oder dort Dateien anlegst, änderst oder löschst.
 
 - Python nur über uv: Befehle mit `uv run …`, Pakete mit `uv add` – nie `pip install`.
 - Nach Code-Änderungen `uv run pytest` und `uv run ruff check .` ausführen.
-
 - <!-- TODO: z. B. keine Dateien ohne Rückfrage löschen -->
 
 ## Git
