@@ -3,13 +3,14 @@
 Einmalige Anleitung für alle, die dieses Repository von GitHub klonen.
 **Nach erfolgreicher Einrichtung wird diese Datei lokal gelöscht (Schritt 7).**
 
-Das Projekt ist für die Arbeit mit **VS Code** und **KI-Agenten** (Claude Code, Copilot)
+Das Projekt ist für die Arbeit mit **VS Code** bzw. **Google Antigravity** und den vier
+**KI-Harnesses** (Claude Code, GitHub Copilot, OpenAI Codex, Google Antigravity)
 ausgelegt. Die Agenten führen die Projekt-Befehle selbst aus – einzurichten ist nur
 das Folgende.
 
 ## 1. Voraussetzungen
 
-- [VS Code](https://code.visualstudio.com/)
+- [VS Code](https://code.visualstudio.com/) (oder [Google Antigravity](https://antigravity.google/))
 - [Git](https://git-scm.com/)
 - [uv](https://docs.astral.sh/uv/getting-started/installation/) – verwaltet Python und
   alle Pakete; Python muss **nicht** separat installiert werden
@@ -18,8 +19,9 @@ das Folgende.
 
 ## 2. Windows: Entwicklermodus einschalten
 
-`.github/copilot-instructions.md` und `.claude/rules/python.md` sind Symlinks. Damit Git
-sie unter Windows korrekt anlegen kann:
+`.github/copilot-instructions.md`, `.claude/rules` und `.claude/skills` sind Symlinks
+auf `AGENTS.md` bzw. `.agents/rules` und `.agents/skills`. Damit Git sie unter Windows
+korrekt anlegen kann:
 
 **Einstellungen → System → Für Entwickler → Entwicklermodus** einschalten.
 
@@ -31,8 +33,8 @@ sie unter Windows korrekt anlegen kann:
 git clone -c core.symlinks=true <repo-url>
 ```
 
-Ohne `-c core.symlinks=true` wird der Symlink unter Windows zu einer einfachen
-Textdatei, und Copilot sieht die Projektregeln nicht.
+Ohne `-c core.symlinks=true` werden die Symlinks unter Windows zu einfachen
+Textdateien, und die KI-Agenten finden die verlinkten Regeln und Skills nicht.
 
 ## 4. Umgebung einrichten
 
@@ -59,11 +61,12 @@ gh auth status
 ```
 
 Erwartet: Tests bestanden, `core.symlinks` ist `true`, `gh` ist angemeldet.
-Zusätzlich müssen beide Symlinks korrekt angelegt sein (Windows/PowerShell):
+Zusätzlich müssen die drei Symlinks korrekt angelegt sein (Windows/PowerShell):
 
 ```powershell
 (Get-Item .github\copilot-instructions.md).LinkType   # Erwartet: SymbolicLink
-(Get-Item .claude\rules\python.md).LinkType           # Erwartet: SymbolicLink
+(Get-Item .claude\rules).LinkType                     # Erwartet: SymbolicLink
+(Get-Item .claude\skills).LinkType                    # Erwartet: SymbolicLink
 ```
 
 ## 7. Diese Datei lokal löschen
@@ -76,3 +79,4 @@ versehentlich committet wird:
 git update-index --skip-worktree EINRICHTUNG.md
 rm EINRICHTUNG.md
 ```
+

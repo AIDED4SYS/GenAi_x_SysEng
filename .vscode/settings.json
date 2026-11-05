@@ -11,5 +11,9 @@
       "source.fixAll": "explicit"
     }
   },
-  "files.eol": "\n"
+  "files.eol": "\n",
+  "chat.instructionsFilesLocations": {
+    ".agents/rules": true,
+    ".claude/rules": false
+  }
 }

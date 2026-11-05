@@ -1,9 +1,9 @@
 ---
-# Copilot liest applyTo, Claude Code liest paths – beide gelten nur für Python-Dateien.
-# Diese Datei ist zugleich .claude/rules/python.md (Symlink).
 applyTo: "**/*.py"
 paths:
   - "**/*.py"
+trigger: glob
+globs: "**/*.py"
 ---
 
 # Python-Regeln
@@ -24,3 +24,4 @@ Hier nur, was speziell beim Schreiben von Python-Code gilt.
 
 - Tests in `tests/`, Dateien heißen `test_<modul>.py`
 - Für neue Funktionen immer auch einen Test schreiben
+
