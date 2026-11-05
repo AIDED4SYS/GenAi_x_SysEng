@@ -34,7 +34,24 @@ Inhalte daraus nutzt oder dort Dateien anlegst, änderst oder löschst.
 
 - Python nur über uv: Befehle mit `uv run …`, Pakete mit `uv add` – nie `pip install`.
 - Nach Code-Änderungen `uv run pytest` und `uv run ruff check .` ausführen.
+- Für Python-Dateien zusätzlich `.agents/rules/python.instructions.md` beachten.
 - <!-- TODO: z. B. keine Dateien ohne Rückfrage löschen -->
+
+## KI-Konfiguration (`.agents/`)
+
+- **Single Source of Truth:** Projektanweisungen stehen in `AGENTS.md`, dateispezifische
+  Regeln in `.agents/rules/` und Skills in `.agents/skills/`. Nur dort Dateien anlegen
+  oder ändern (Aufbau und Zusammenspiel: `docs/architecture/ki-harnesses.md`).
+- **Keine `CLAUDE.md` / `GEMINI.md`:** Weder `CLAUDE.md`, `CLAUDE.local.md` noch `GEMINI.md`
+  anlegen (verdrängt in Claude Code sonst `AGENTS.md`).
+- **Symlinks nicht ersetzen:** `.github/copilot-instructions.md` (→ `../AGENTS.md`),
+  `.claude/rules` (→ `../.agents/rules`) und `.claude/skills` (→ `../.agents/skills`)
+  sind Symlinks. `.claude/` selbst muss ein echter Ordner bleiben (für
+  `settings.local.json` und Worktrees).
+- **Regel-Format:** Regeldateien flach in `.agents/rules/<name>.instructions.md` ablegen
+  (Endung `.instructions.md` ist Pflicht für VS Code/Copilot; Frontmatter immer mit
+  `applyTo`, `paths`, `trigger` und bei Dateimustern `globs`) und in `AGENTS.md` unter
+  `## Regeln` kurz darauf verweisen, damit auch Codex die Regel kennt.
 
 ## Git
 

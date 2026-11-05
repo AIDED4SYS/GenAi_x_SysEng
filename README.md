@@ -10,22 +10,14 @@ Arbeitsordner, ist die Einrichtung bereits erledigt.
 
 ## Anweisungen für KI-Agenten
 
-Die Projektregeln für alle Agenten stehen in [AGENTS.md](AGENTS.md).
+Alle Regeln, Konventionen und die zentrale Konfiguration für die vier genutzten
+KI-Harnesses (Claude Code, GitHub Copilot, OpenAI Codex, Google Antigravity) stehen
+in [AGENTS.md](AGENTS.md).
 
-`.github/copilot-instructions.md` ist **keine eigene Datei**, sondern ein Symlink auf
-`AGENTS.md` – GitHub Copilot liest damit automatisch dieselben Regeln.
-
-- **Nur `AGENTS.md` bearbeiten.** Änderungen gelten sofort nach dem Speichern auch für Copilot.
-- `.github/copilot-instructions.md` nicht löschen oder durch eine Kopie ersetzen,
-  sonst laufen die beiden Dateien auseinander.
-- Claude Code liest `AGENTS.md` direkt – eine eigene `CLAUDE.md` gibt es bewusst nicht.
-- Zusätzliche Regeln nur für Python-Dateien:
-  [.github/instructions/python.instructions.md](.github/instructions/python.instructions.md).
-  `.claude/rules/python.md` ist ein Symlink darauf – Copilot und Claude Code nutzen
-  dieselbe Datei.
-- Regeln für einzelne Ordner stehen in einer `context.md` im Ordner, bisher nur
-  [docs/reference/context.md](docs/reference/context.md). Sie wird nicht automatisch
-  geladen – `AGENTS.md` verweist darauf.
+Anweisungen, Regeln (`.agents/rules/`) und Skills (`.agents/skills/`) werden
+ausschließlich dort gepflegt – siehe Abschnitt „KI-Konfiguration“ in [AGENTS.md](AGENTS.md)
+sowie die Übersicht zum Zusammenspiel der Harnesses unter
+[docs/architecture/ki-harnesses.md](docs/architecture/ki-harnesses.md).
 
 ## Projektstruktur
 
@@ -42,8 +34,9 @@ Die Projektregeln für alle Agenten stehen in [AGENTS.md](AGENTS.md).
 | `pyproject.toml`   | Projekt-Konfiguration: Abhängigkeiten, Ruff- und pytest-Einstellungen |
 | `uv.lock`          | Exakte Paketversionen – wird von uv gepflegt, nicht von Hand bearbeiten |
 | `.python-version`  | Python-Version des Projekts (3.12)                                 |
-| `.github/`         | GitHub: CI, Issue- und PR-Vorlagen, Copilot-Anweisungen            |
-| `.claude/`         | Claude Code: Regeln (`rules/`) und Skills (`skills/`)              |
+| `.agents/`         | Zentrale Regeln (`rules/`) und Skills (`skills/`) für alle KI-Agenten |
+| `.claude/`         | Claude Code: Symlinks auf `.agents/rules` und `.agents/skills` sowie lokale Einstellungen |
+| `.github/`         | GitHub: CI, Issue- und PR-Vorlagen, Symlink `copilot-instructions.md` |
 | `.vscode/`         | VS-Code-Einstellungen und empfohlene Erweiterungen                 |
 | `.gitignore`       | Was Git ignoriert (`.venv`, Caches, `.env` …)                      |
 | `.gitattributes`   | Zeilenenden: LF, Windows-Skripte CRLF                              |
