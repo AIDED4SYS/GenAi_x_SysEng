@@ -47,8 +47,10 @@ widerspricht. Kleine, klare Aufgaben oder ein „setz einfach um“ direkt erled
    zuerst gemeinsam formulieren. Bei nicht-trivialen Aufgaben vorher dein
    Problemverständnis bestätigen lassen.
 
+<!-- DEAKTIVIERT (vom Agenten zu ignorieren):
 **Immer:** gelesene Dateien kurz nennen; auf leere Ordner (z. B. `docs/requirements/`) oder
 fehlende Informationen hinweisen.
+-->
 
 ## Karte: was der Ordnerbaum nicht zeigt
 
