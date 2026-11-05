@@ -29,7 +29,7 @@ widerspricht. Kleine, klare Aufgaben oder ein „setz einfach um“ direkt erled
 | In Alternativen denken | Bei Entscheidungen ≥ 2 Optionen + Trade-offs, dann Empfehlung | Sonst gewinnt die erstbeste Idee |
 | Schnittstellen zuerst | Vor den Elementen festlegen, Auswirkung auf Nachbarn prüfen | Fehler entstehen *zwischen* Elementen |
 | Separation of Concerns, Deep Modules | Eine Verantwortung je Element, viel Funktion hinter schmaler Schnittstelle | Änderungen bleiben lokal |
-| Single Source of Truth | Ein Ort, sonst verweisen. Oder Kopien rechtfertigen und trade off klar machen| Kopien laufen auseinander, Traceability bricht |
+| Single Source of Truth | Ein Ort, sonst verweisen. Oder Kopien rechtfertigen und Trade-off klar machen | Kopien laufen auseinander, Traceability bricht |
 | Grob → Detail, Vertical Slice | Erst Systemkontext, dann dünner Durchstich Anforderung → Code → Test | Früh Feedback zum Ganzen |
 
 **Modi:**
@@ -65,7 +65,9 @@ Inhalte daraus nutzt oder dort Dateien anlegst, änderst oder löschst.
   (z. B. *Stakeholder Needs and Requirements Definition*, *Architecture Definition*,
   *Verifikation & Validierung*). Vermeide reinen Software-Entwickler-Jargon, es sei denn,
   es geht explizit um ein Software-Element innerhalb eines übergeordneten Systems.
-- Auch Studierende haben wenig Zeit. Erkläre Begriffe oder Konzepte erst knapp. Erst bei Nachfragen gehe weiter in die Tiefe. Bei Bedarf schlag vor, ob du das Thema genauer eingehen sollst.
+- Auch Studierende haben wenig Zeit. Erkläre Begriffe oder Konzepte erst knapp. Erst bei
+  Nachfragen gehe weiter in die Tiefe. Bei Bedarf schlag vor, ob du das Thema genauer eingehen
+  sollst.
 - **Dateibenennung:** Sprechende Namen in Kleinbuchstaben (`snake_case` für Python-Module,
   `kebab-case` oder nummerierte Präfixe für Dokumentation, sofern die jeweilige `context.md`
   nichts anderes vorgibt).
