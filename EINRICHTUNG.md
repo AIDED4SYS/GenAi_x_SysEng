@@ -58,6 +58,23 @@ Damit Git sie unter Windows ohne Administratorrechte als echte Symlinks anlegen 
 > zeige eine übersichtliche Status-Tabelle (✅/❌), repariere Probleme soweit möglich
 > selbstständig und entferne `EINRICHTUNG.md` erst, wenn alle 5 Punkte grün sind.
 
+### Den Menschen auf dem Laufenden halten
+
+Arbeite die Schritte nacheinander ab und melde dich bei **jedem** Schritt kurz im Chat:
+
+- **Vor dem Schritt:** wo du stehst und was du prüfst, z. B.
+  `▶ Schritt B von A–F: Python-Umgebung & Tests prüfen …`
+- **Nach dem Schritt:** das Ergebnis in einem Satz, z. B.
+  `✅ Schritt B erfolgreich: uv ist verfügbar, alle Tests sind grün.` bzw.
+  `❌ Schritt B fehlgeschlagen: uv wurde nicht gefunden.` – bei einer Reparatur
+  zusätzlich, was du getan hast und ob die erneute Prüfung grün ist.
+- **Muss Software auf dem Rechner installiert werden** (z. B. `uv` in Schritt B oder
+  `gh` in Schritt E): **stoppe**, nenne den Installationsbefehl und frage den Menschen,
+  ob er selbst installieren möchte oder du es tun sollst. Fahre erst nach seiner Antwort
+  fort. Muss VS Code danach neu gestartet werden, bitte den Menschen, anschließend die
+  Startnachricht aus Teil 1, Punkt 4 erneut zu schicken.
+- **Am Ende:** die Status-Tabelle aller Schritte (✅/❌).
+
 ### Schritt A: Eigenes GitHub-Remote prüfen
 
 ```bash
@@ -89,8 +106,8 @@ uv run pytest
 - **Reparatur bei Fehler:**
   - Ist `uv` installiert, aber die Umgebung fehlt oder ist unvollständig: führe `uv sync`
     und danach erneut `uv run pytest` aus.
-  - Wird `uv` nicht gefunden: nenne den Installationsbefehl
-    (`winget install --id=Astral-sh.Uv -e` unter Windows bzw.
+  - Wird `uv` nicht gefunden: **stoppen und den Menschen fragen** (siehe oben). Nenne
+    den Installationsbefehl (`winget install --id=Astral-sh.Uv -e` unter Windows bzw.
     `curl -LsSf https://astral.sh/uv/install.sh | sh` unter macOS/Linux) und weise darauf
     hin, dass VS Code / das Terminal danach einmal neu gestartet werden muss.
 
@@ -142,7 +159,8 @@ gh auth status
   kontaktiert `api.github.com` – bei Sandbox-Netzwerkfehlern außerhalb der Sandbox
   ausführen.)*
 - **Reparatur bei Fehler:**
-  - Ist `gh` nicht installiert: `winget install --id GitHub.cli` (Windows) bzw.
+  - Ist `gh` nicht installiert: **stoppen und den Menschen fragen** (siehe oben);
+    Installationsbefehl `winget install --id GitHub.cli` (Windows) bzw.
     `brew install gh` (macOS), danach Terminal/VS Code neu starten.
   - Ist `gh` noch nicht angemeldet: den Menschen bitten, im Terminal `gh auth login`
     auszuführen (GitHub.com → HTTPS → Login with a web browser), und danach erneut prüfen.
@@ -161,7 +179,17 @@ Sobald **alle 5 Prüfungen (A–E) grün** sind (und `origin` **nicht** auf
 
    *(Hinweis für Agenten mit Sandbox: Falls `.git/index.lock` durch die Sandbox
    blockiert wird, Befehl außerhalb der Sandbox ausführen.)*
-2. Weise den Menschen darauf hin, dass die Löschung (zusammen mit dem Ausfüllen des
-   eigenen Projekt-Steckbriefs unter `## Projekt` in `AGENTS.md`) auf einem Branch
-   committet und per Pull Request gemergt werden kann (siehe Git-Workflow in `README.md`).
+2. Frage den Menschen ausdrücklich:
+   *„Soll ich jetzt einen Branch anlegen, die Löschung committen und einen Pull Request
+   öffnen?“* (Laut `AGENTS.md` wird nur auf Aufforderung committet und ein PR geöffnet –
+   die Zustimmung ist diese Aufforderung.)
+   - **Bei Ja:** Branch anlegen (z. B. `git switch -c einrichtung-abschliessen`),
+     committen, pushen und den PR mit `gh pr create` öffnen; dem Menschen den Link zum PR
+     nennen und darauf hinweisen, dass er ihn auf GitHub mergen muss.
+   - **Bei Nein:** darauf hinweisen, dass die Löschung bereits vorgemerkt ist und später
+     auf einem Branch committet und per PR gemergt werden sollte (siehe Git-Workflow in
+     `README.md`).
+   - In beiden Fällen erwähnen, dass das Ausfüllen des Projekt-Steckbriefs unter
+     `## Projekt` in `AGENTS.md` gut in denselben PR passt.
+3. Melde den Abschluss: `✅ Schritt F erfolgreich: Einrichtung abgeschlossen.`
 
