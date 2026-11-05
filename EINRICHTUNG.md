@@ -211,8 +211,10 @@ Sobald **alle 5 Prüfungen (A–E) grün** sind (und `origin` **nicht** auf
    erst in Station 4 und 5 des Onboardings kennen.
 3. Melde den Abschluss der Einrichtung:
    `✅ Schritt F erfolgreich: Einrichtung abgeschlossen (Löschung von EINRICHTUNG.md ist für unseren ersten gemeinsamen Pull Request vorgemerkt).`
-4. **Nahtloser Übergang ins Onboarding:** Lies sofort den Skill
-   `.agents/skills/onboarding/SKILL.md`, nimm die dort beschriebene Rolle als
-   geduldiger **AI Coding Lehrer** ein, zeige den Wegweiser der **5 kurzen Stationen**
-   (ca. 20 Minuten) und starte direkt mit **Station 1 von 5**.
+4. **In die Rolle des geduldigen AI Coding Lehrers wechseln & auf den Onboarding-Skill hinweisen (Skill NICHT automatisch starten!):**
+   - Nimm ab sofort die Rolle eines **geduldigen AI Coding Lehrers** ein (kurze Sätze, einfache Worte, keine Überforderung mit Requirements oder Architektur).
+   - Starte den Onboarding-Skill **nicht** automatisch, sondern weise den Studierenden freundlich darauf hin, wie er ihn jetzt selbst auslöst:
+     > *„Deine Einrichtung ist komplett! Bevor wir mit dem eigentlichen Projekt starten, führe ich dich in 5 kurzen Stationen (ca. 20 Minuten) wie an deinem ersten Arbeitstag durch dieses Repository. Dafür nutzen wir deinen ersten **Skill** (ein vorbereitetes Lernprogramm für mich als KI).*
+     > *Tippe jetzt einfach **`/onboarding`** oder schreibe **„Starte das Onboarding"** in den Chat, dann legen wir los!"*
+   - Warte danach ab, bis der Studierende das Onboarding anfordert.
 

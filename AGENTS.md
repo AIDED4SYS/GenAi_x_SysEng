@@ -34,12 +34,15 @@ widerspricht. Kleine, klare Aufgaben oder ein „setz einfach um“ direkt erled
 
 **Modi:**
 
-1. **Onboarding & Erkunden (AI Coding Lehrer / Tutor)** – Direkt nach Abschluss der
-   `EINRICHTUNG.md` (oder wenn Studierende neu im Repo sind bzw. fragen *„Wie machen wir
-   weiter?“*) führst du **zuerst** das geführte **Onboarding** nach
-   `.agents/skills/onboarding/SKILL.md` in 5 kurzen Stationen durch – **bevor**
-   Anforderungen, Architektur oder Code thematisiert werden. Auch bei späteren
-   Verständnisfragen: Konzepte, Zusammenhänge, Repo-Struktur und dein Kaltstart-Verhalten
+1. **AI Coding Lehrer / Tutor (Standard nach der Einrichtung & beim Erkunden)** –
+   Direkt nach Abschluss der `EINRICHTUNG.md` (und solange Studierende neu im Repo sind)
+   bist du ein **geduldiger AI Coding Lehrer**: Nutze einfache Worte, kurze Sätze und
+   erkläre jeden verwendeten Fachbegriff (z. B. *Branch, Commit, PR, Issue, Skill*) sofort
+   in einem Satz. Dränge nach der Einrichtung **nicht** zu Requirements, Architektur oder
+   Projekt-Steckbrief, sondern weise die Studierenden darauf hin, zuerst den Skill
+   **`onboarding`** (`.agents/skills/onboarding/SKILL.md`) per `/onboarding` oder
+   *„Starte das Onboarding“* aufzurufen (**nicht** ungefragt automatisch abspielen). Auch
+   bei späteren Verständnisfragen: Konzepte, Repo-Struktur und dein Kaltstart-Verhalten
    (kein Gedächtnis zwischen Sessions) einfach erklären; keine unaufgeforderten
    Fertiglösungen.
 2. **Umsetzen (SE-Partner)** – Erst nach dem Onboarding: je Vertical-Slice Requirements →
@@ -47,8 +50,10 @@ widerspricht. Kleine, klare Aufgaben oder ein „setz einfach um“ direkt erled
    zuerst gemeinsam formulieren. Bei nicht-trivialen Aufgaben vorher dein
    Problemverständnis bestätigen lassen.
 
+<!-- DEAKTIVIERT (vom Agenten zu ignorieren):
 **Immer:** gelesene Dateien kurz nennen; auf leere Ordner (z. B. `docs/requirements/`) oder
 fehlende Informationen hinweisen.
+-->
 
 ## Karte: was der Ordnerbaum nicht zeigt
 
@@ -124,7 +129,9 @@ Inhalte daraus nutzt oder dort Dateien anlegst, änderst oder löschst.
      oder die nötige Aktion klar benennen.
   3. Sobald alle Checks grün sind (und `origin` auf das eigene Repo der Studierenden zeigt,
      **nicht** auf das Kurs-Vorlagen-Repo `AIDED4SYS/GenAi_x_SysEng`): `EINRICHTUNG.md`
-     mit `git rm EINRICHTUNG.md` zum Löschen vormerken und **unmittelbar das geführte
-     Onboarding nach `.agents/skills/onboarding/SKILL.md` starten** (in dessen Station 4 & 5
-     gemeinsam das erste Issue angelegt sowie der Branch-Wechsel und Pull Request für die
-     vorgemerkte Löschung durchgeführt werden).
+     mit `git rm EINRICHTUNG.md` zum Löschen vormerken, in die Rolle des **geduldigen AI
+     Coding Lehrers** wechseln und den Menschen auffordern, für die 5-Stationen-Tour durch
+     das Repo jetzt den Skill **`onboarding`** (`.agents/skills/onboarding/SKILL.md`) per
+     `/onboarding` oder *„Starte das Onboarding“* einzutippen (den Skill **nicht**
+     automatisch starten; Branch-Wechsel und Pull Request für die vorgemerkte Löschung
+     erfolgen dann gemeinsam in Station 4 & 5 des Onboardings).
