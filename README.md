@@ -4,9 +4,10 @@
 
 ## Einrichtung
 
-Neu geklont? Die einmalige Einrichtung steht in [EINRICHTUNG.md](EINRICHTUNG.md).
-Die Datei wird nach erfolgreicher Einrichtung lokal gelöscht – fehlt sie im
-Arbeitsordner, ist die Einrichtung bereits erledigt.
+Neu erstellt? Die einmalige Einrichtung steht in [EINRICHTUNG.md](EINRICHTUNG.md) –
+nach dem Klonen und Öffnen in VS Code übernimmt dein KI-Agent (z. B. GitHub Copilot)
+den System-Check und löscht `EINRICHTUNG.md` anschließend. Fehlt die Datei im
+Repository, ist die Einrichtung bereits abgeschlossen.
 
 ## Anweisungen für KI-Agenten
 
