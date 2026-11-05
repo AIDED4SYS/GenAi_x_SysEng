@@ -110,7 +110,8 @@ Inhalte daraus nutzt oder dort Dateien anlegst, änderst oder löschst.
      sondern `EINRICHTUNG.md` lesen und sofort die **automatische Diagnose (Teil 2)**
      ausführen (`git remote get-url origin`, `uv run pytest`, `git config core.symlinks`,
      Prüfung der drei Symlinks `.github/copilot-instructions.md`, `.claude/rules`,
-     `.claude/skills` sowie `gh auth status`).
+     `.claude/skills`, `gh auth status` sowie die Sichtbarkeit des eigenen Repos über
+     `gh repo view --json visibility`).
   2. Dem Menschen eine **kompakte Status-Übersicht** (✅/❌) zeigen und fehlgeschlagene
      Punkte – soweit möglich – direkt selbst reparieren (z. B. `uv sync`, Symlinks per
      `git config core.symlinks true` + Löschen + `git checkout -- …` wiederherstellen)
