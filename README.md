@@ -2,12 +2,15 @@
 
 <!-- TODO: Kurze Beschreibung – worum geht es in diesem Projekt? -->
 
-## Einrichtung
+## Einrichtung & Onboarding
 
 Neu erstellt? Die einmalige Einrichtung steht in [EINRICHTUNG.md](EINRICHTUNG.md) –
 nach dem Klonen und Öffnen in VS Code übernimmt dein KI-Agent (z. B. GitHub Copilot)
-den System-Check und löscht `EINRICHTUNG.md` anschließend. Fehlt die Datei im
-Repository, ist die Einrichtung bereits abgeschlossen.
+den System-Check, merkt `EINRICHTUNG.md` zum Löschen vor und startet direkt im Anschluss
+das **geführte Onboarding** (`.agents/skills/onboarding/SKILL.md`) in 5 kurzen Stationen
+durch das Repository. Fehlt `EINRICHTUNG.md` im Repository, ist die Einrichtung bereits
+abgeschlossen (das Onboarding lässt sich jederzeit im Chat mit *„Starte bitte das
+Onboarding“* aufrufen).
 
 ## Anweisungen für KI-Agenten
 
