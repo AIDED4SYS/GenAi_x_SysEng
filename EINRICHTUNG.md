@@ -33,19 +33,32 @@ Damit Git sie unter Windows ohne Administratorrechte als echte Symlinks anlegen 
 2. Vergib einen Namen für dein Repository, stelle die Sichtbarkeit auf **Private**
    *(GitHub wählt im Formular oft **Public** vor – die Sichtbarkeit wird **nicht** aus
    der Vorlage übernommen)* und erstelle es unter deinem GitHub-Account.
-3. Klone **dein eigenes** Repository mit aktivierten Symlinks:
+3. Kopiere die URL **deines eigenen** Repositorys: grüner Button **„Code“ → Reiter
+   „HTTPS“** → URL kopieren (z. B. `https://github.com/max-muster/mein-projekt.git`).
+4. Öffne ein Terminal (z. B. PowerShell) und wechsle **zuerst** in den Ordner, in dem
+   dein Repository liegen soll (den Ordner bei Bedarf vorher im Explorer anlegen) –
+   `git clone` legt den Repo-Ordner ohne Rückfrage dort an, wo das Terminal gerade
+   steht:
 
    ```bash
-   git clone -c core.symlinks=true <deine-eigene-repo-url>
+   cd C:\Users\max\Studium
+   ```
+
+5. Klone **dann** dein Repository mit aktivierten Symlinks. Setze deine URL **ohne
+   spitze Klammern** ein:
+
+   ```bash
+   git clone -c core.symlinks=true https://github.com/max-muster/mein-projekt.git
    ```
 
    *(Falls du bereits ohne `-c core.symlinks=true` oder direkt über den VS-Code-Button
-   geklont hast: kein Problem – der Agent repariert die Symlinks gleich automatisch.)*
+   geklont hast: kein Problem – der Agent repariert die Symlinks gleich automatisch.
+   Liegt der Ordner am falschen Ort, kannst du ihn einfach im Explorer verschieben.)*
 
 ### 4. In VS Code öffnen & an den Agenten übergeben
 
 1. Öffne den geklonten Ordner in VS Code (`Datei → Ordner öffnen…`).
-2. Installiere die empfohlenen Erweiterungen: `Strg+Shift+X` → `@recommended` eingeben.
+2. Installiere die empfohlenen Erweiterungen: `Strg+Shift+X` → `@recommended` eingeben. 
 3. Öffne den KI-Chat (z. B. **GitHub Copilot Chat** im **Agent-Modus**) und schicke
    folgende Nachricht:
 
@@ -177,13 +190,14 @@ gh repo view --json visibility
     `gh api -X PATCH repos/{owner}/{repo} -f visibility=private` verwenden.)*
     Danach erneut mit `gh repo view --json visibility` prüfen.
 
-### Schritt F: Abschluss – `EINRICHTUNG.md` löschen
+### Schritt F: Abschluss – `EINRICHTUNG.md` vormerken & ins Onboarding starten
 
 Sobald **alle 5 Prüfungen (A–E) grün** sind (und `origin` **nicht** auf
 `AIDED4SYS/GenAi_x_SysEng` zeigt):
 
-1. Entferne `EINRICHTUNG.md` regulär über Git, damit die Datei auch auf GitHub aus dem
-   Studierenden-Repository verschwindet:
+1. Merke `EINRICHTUNG.md` regulär über Git zum Löschen vor, damit wir diese Änderung am
+   Ende des anschließenden Onboardings gemeinsam als ersten Übungs-Pull-Request
+   einreichen können:
 
    ```bash
    git rm EINRICHTUNG.md
@@ -191,17 +205,14 @@ Sobald **alle 5 Prüfungen (A–E) grün** sind (und `origin` **nicht** auf
 
    *(Hinweis für Agenten mit Sandbox: Falls `.git/index.lock` durch die Sandbox
    blockiert wird, Befehl außerhalb der Sandbox ausführen.)*
-2. Frage den Menschen ausdrücklich:
-   *„Soll ich jetzt einen Branch anlegen, die Löschung committen und einen Pull Request
-   öffnen?“* (Laut `AGENTS.md` wird nur auf Aufforderung committet und ein PR geöffnet –
-   die Zustimmung ist diese Aufforderung.)
-   - **Bei Ja:** Branch anlegen (z. B. `git switch -c einrichtung-abschliessen`),
-     committen, pushen und den PR mit `gh pr create` öffnen; dem Menschen den Link zum PR
-     nennen und darauf hinweisen, dass er ihn auf GitHub mergen muss.
-   - **Bei Nein:** darauf hinweisen, dass die Löschung bereits vorgemerkt ist und später
-     auf einem Branch committet und per PR gemergt werden sollte (siehe Git-Workflow in
-     `README.md`).
-   - In beiden Fällen erwähnen, dass das Ausfüllen des Projekt-Steckbriefs unter
-     `## Projekt` in `AGENTS.md` gut in denselben PR passt.
-3. Melde den Abschluss: `✅ Schritt F erfolgreich: Einrichtung abgeschlossen.`
+2. **Noch keinen Branch oder Pull Request erstellen und noch NICHT mit Requirements,
+   Architektur oder dem Projekt-Steckbrief beginnen!** Die Studierenden arbeiten zum
+   ersten Mal mit einem KI-Coding-Agenten und lernen Branch, Commit und Pull Request
+   erst in Station 4 und 5 des Onboardings kennen.
+3. Melde den Abschluss der Einrichtung:
+   `✅ Schritt F erfolgreich: Einrichtung abgeschlossen (Löschung von EINRICHTUNG.md ist für unseren ersten gemeinsamen Pull Request vorgemerkt).`
+4. **Nahtloser Übergang ins Onboarding:** Lies sofort den Skill
+   `.agents/skills/onboarding/SKILL.md`, nimm die dort beschriebene Rolle als
+   geduldiger **AI Coding Lehrer** ein, zeige den Wegweiser der **5 kurzen Stationen**
+   (ca. 20 Minuten) und starte direkt mit **Station 1 von 5**.
 

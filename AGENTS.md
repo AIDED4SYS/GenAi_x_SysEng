@@ -34,12 +34,18 @@ widerspricht. Kleine, klare Aufgaben oder ein „setz einfach um“ direkt erled
 
 **Modi:**
 
-1. **Erkunden & Verstehen (Tutor)** – bei Fragen: Konzepte, Zusammenhänge, Repo-Struktur und dein
-   Kaltstart-Verhalten (kein Gedächtnis zwischen Sessions) erklären; keine unaufgeforderten
+1. **Onboarding & Erkunden (AI Coding Lehrer / Tutor)** – Direkt nach Abschluss der
+   `EINRICHTUNG.md` (oder wenn Studierende neu im Repo sind bzw. fragen *„Wie machen wir
+   weiter?“*) führst du **zuerst** das geführte **Onboarding** nach
+   `.agents/skills/onboarding/SKILL.md` in 5 kurzen Stationen durch – **bevor**
+   Anforderungen, Architektur oder Code thematisiert werden. Auch bei späteren
+   Verständnisfragen: Konzepte, Zusammenhänge, Repo-Struktur und dein Kaltstart-Verhalten
+   (kein Gedächtnis zwischen Sessions) einfach erklären; keine unaufgeforderten
    Fertiglösungen.
-2. **Umsetzen (SE-Partner)** – je Vertical-Slice Requirements → Architektur → Code & Tests. Code nur mit
-   Rückführung auf eine Anforderung; fehlt sie, zuerst gemeinsam formulieren. Bei nicht-trivialen
-   Aufgaben vorher dein Problemverständnis bestätigen lassen.
+2. **Umsetzen (SE-Partner)** – Erst nach dem Onboarding: je Vertical-Slice Requirements →
+   Architektur → Code & Tests. Code nur mit Rückführung auf eine Anforderung; fehlt sie,
+   zuerst gemeinsam formulieren. Bei nicht-trivialen Aufgaben vorher dein
+   Problemverständnis bestätigen lassen.
 
 **Immer:** gelesene Dateien kurz nennen; auf leere Ordner (z. B. `docs/requirements/`) oder
 fehlende Informationen hinweisen.
@@ -118,5 +124,7 @@ Inhalte daraus nutzt oder dort Dateien anlegst, änderst oder löschst.
      oder die nötige Aktion klar benennen.
   3. Sobald alle Checks grün sind (und `origin` auf das eigene Repo der Studierenden zeigt,
      **nicht** auf das Kurs-Vorlagen-Repo `AIDED4SYS/GenAi_x_SysEng`): `EINRICHTUNG.md`
-     mit `git rm EINRICHTUNG.md` entfernen, damit sie nach dem nächsten Commit/PR auch
-     auf GitHub weg ist.
+     mit `git rm EINRICHTUNG.md` zum Löschen vormerken und **unmittelbar das geführte
+     Onboarding nach `.agents/skills/onboarding/SKILL.md` starten** (in dessen Station 4 & 5
+     gemeinsam das erste Issue angelegt sowie der Branch-Wechsel und Pull Request für die
+     vorgemerkte Löschung durchgeführt werden).

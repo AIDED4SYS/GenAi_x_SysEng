@@ -22,7 +22,8 @@ Symlinks bzw. Einstellungen auf dieselben Dateien zu.
 │   ├── rules/
 │   │   └── python.instructions.md             # 📄 Python-Regel (Antigravity, Copilot, Claude, Codex)
 │   └── skills/
-│       └── .gitkeep                           # 📄 Ablageort für gemeinsame Skills (<name>/SKILL.md)
+│       └── onboarding/
+│           └── SKILL.md                       # 📄 Geführtes 5-Stationen-Onboarding nach der Einrichtung
 ├── .claude/                                   # 📁 Echter Ordner (für settings.local.json & Worktrees)
 │   ├── rules  -> ../.agents/rules             # 🔗 Ordner-Symlink für Claude Code
 │   ├── skills -> ../.agents/skills            # 🔗 Ordner-Symlink für Claude Code
