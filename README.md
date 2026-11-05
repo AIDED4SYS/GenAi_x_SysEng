@@ -48,8 +48,8 @@ sowie die Übersicht zum Zusammenspiel der Harnesses unter
 Pull Request.
 
 1. **Arbeiten:** Alle Änderungen einer Session sammeln – nicht für jede Kleinigkeit
-   einen eigenen Branch oder PR. Agenten committen erst, wenn man es ihnen sagt
-   (siehe `AGENTS.md`).
+   einen eigenen Branch oder PR. Agenten committen, pushen und öffnen PRs erst, wenn
+   man es ihnen sagt (siehe `AGENTS.md`).
 2. **Branch anlegen:** spätestens vor dem ersten Commit mit
    `git switch -c <kurzer-name>` (z. B. `docs-unterordner`). Noch nicht committete
    Änderungen nimmt der neue Branch mit.
