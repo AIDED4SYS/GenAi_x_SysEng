@@ -30,7 +30,9 @@ Damit Git sie unter Windows ohne Administratorrechte als echte Symlinks anlegen 
 1. Öffne das Kurs-Vorlagen-Repository auf GitHub und klicke oben rechts auf den grünen
    Button **„Use this template“ → „Create a new repository“**
    *(bitte **nicht** direkt das Vorlagen-Repo klonen).*
-2. Vergib einen Namen für dein Repository und erstelle es unter deinem GitHub-Account.
+2. Vergib einen Namen für dein Repository, stelle die Sichtbarkeit auf **Private**
+   *(GitHub wählt im Formular oft **Public** vor – die Sichtbarkeit wird **nicht** aus
+   der Vorlage übernommen)* und erstelle es unter deinem GitHub-Account.
 3. Klone **dein eigenes** Repository mit aktivierten Symlinks:
 
    ```bash
@@ -148,13 +150,15 @@ Unter Windows (PowerShell):
   3. Prüfe anschließend erneut den `LinkType` aller drei Pfade. Bleibt er leer, ist der
      Windows-Entwicklermodus noch nicht eingeschaltet.
 
-### Schritt E: GitHub CLI (`gh`) prüfen
+### Schritt E: GitHub CLI (`gh`) & Sichtbarkeit des Repos prüfen
 
 ```bash
 gh auth status
+gh repo view --json visibility
 ```
 
-- **Erwartet:** Bei `github.com` angemeldet.
+- **Erwartet:** Bei `github.com` angemeldet und das eigene Repo ist `PRIVATE`
+  (die Sichtbarkeit lässt sich erst prüfen, wenn `gh` angemeldet ist).
   *(Hinweis für Agenten mit Sandbox wie Antigravity oder Codex: `gh auth status`
   kontaktiert `api.github.com` – bei Sandbox-Netzwerkfehlern außerhalb der Sandbox
   ausführen.)*
@@ -164,6 +168,14 @@ gh auth status
     `brew install gh` (macOS), danach Terminal/VS Code neu starten.
   - Ist `gh` noch nicht angemeldet: den Menschen bitten, im Terminal `gh auth login`
     auszuführen (GitHub.com → HTTPS → Login with a web browser), und danach erneut prüfen.
+  - Ist das Repo `PUBLIC`: den Menschen darauf hinweisen und fragen, ob du es auf
+    privat stellen sollst. Bei Ja:
+    ```bash
+    gh repo edit --visibility private --accept-visibility-change-consequences
+    ```
+    *(Antwortet die API mit einem Fehler wie `HTTP 500`, alternativ
+    `gh api -X PATCH repos/{owner}/{repo} -f visibility=private` verwenden.)*
+    Danach erneut mit `gh repo view --json visibility` prüfen.
 
 ### Schritt F: Abschluss – `EINRICHTUNG.md` löschen
 
