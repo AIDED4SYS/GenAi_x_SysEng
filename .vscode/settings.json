@@ -12,6 +12,12 @@
     }
   },
   "files.eol": "\n",
+  "files.exclude": {
+    "**/.pytest_cache": true,
+    "**/.ruff_cache": true,
+    "**/.venv": true,
+    "**/__pycache__": true
+  },
   "chat.instructionsFilesLocations": {
     ".agents/rules": true,
     ".claude/rules": false
