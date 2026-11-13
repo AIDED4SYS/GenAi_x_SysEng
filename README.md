@@ -28,7 +28,14 @@ sowie die Übersicht zum Zusammenspiel der Harnesses unter
 |-----------------------|---------------------------------|
 | `src/genai_x_syseng/` | Quellcode                       |
 | `tests/`              | Tests (pytest)                  |
-| `docs/`               | Dokumentation                   |
+| [`docs/requirements/`](docs/requirements/) | Anforderungen und Akzeptanzkriterien |
+| [`docs/architecture/`](docs/architecture/) | Architektur, Schnittstellen und Entscheidungen |
+| [`docs/reference/`](docs/reference/) | Quellen und Recherche |
+
+Die dateispezifischen Leitplanken stehen in [`docs/requirements/context.md`](docs/requirements/context.md),
+[`docs/architecture/context.md`](docs/architecture/context.md) und
+[`docs/reference/context.md`](docs/reference/context.md). Sie sichern die Traceability
+(Nachverfolgbarkeit) von Anforderungen über Architektur bis zu Code und Tests.
 
 ## Konfiguration
 
